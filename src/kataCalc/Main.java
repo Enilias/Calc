@@ -6,8 +6,6 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         System.out.println(calc(sc.nextLine()));
-
-
     }
 
     private static int arabicNumberCount = 0;
@@ -17,11 +15,13 @@ public class Main {
         if (list.length != 3) {
             throw new Exception();
         }
+
         int num1 = romanNumeralsArabic(list[0]);
         int num2 = romanNumeralsArabic(list[2]);
         if (arabicNumberCount == 1 || num1 > 10 || num2 > 10) {
             throw new Exception();
         }
+
         int result = 0;
         switch (list[1]) {
             case "+":
@@ -93,6 +93,7 @@ public class Main {
         if (num < 0) {
             throw new Exception();
         }
+
         Map<Integer, String> map = new TreeMap<>(Collections.reverseOrder());
         map.put(1000, "M");
         map.put(900, "CM");
@@ -117,15 +118,8 @@ public class Main {
                 }
             }
         }
-
         return result.toString();
-
     }
-
-    private enum Roman {
-
-    }
-
 }
 
 
